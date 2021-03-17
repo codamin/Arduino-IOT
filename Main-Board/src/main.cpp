@@ -110,7 +110,7 @@ void process_watering() {
   else if (humidity < 20) {
     digitalWrite(in1, HIGH);
     digitalWrite(in2, LOW);
-    analogWrite(en, MAX_PWM);
+    analogWrite(en, MAX_PWM * 0.25);
     watering_type = "Water 20 CC";
   }
   else {
@@ -122,7 +122,7 @@ void process_watering() {
     else {
       digitalWrite(in1, HIGH);
       digitalWrite(in2, LOW);
-      analogWrite(en, MAX_PWM);
+      analogWrite(en, MAX_PWM * 0.1);
       watering_type = "Water 10 CC";
     }
   } 

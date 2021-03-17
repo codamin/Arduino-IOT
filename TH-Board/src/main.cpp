@@ -4,8 +4,8 @@
 // SHT25 I2C address is 0x40(64)
 #define Addr 0x40
 
-#define BLUETOOTH_TEMPERATURE_START_CHAR '#'
-#define BLUETOOTH_HUMIDITY_START_CHAR '*'
+#define BLUETOOTH_TEMPERATURE_START_CHAR 't'
+#define BLUETOOTH_HUMIDITY_START_CHAR 'h'
 
 float readTemperature();
 float readHumidity();
@@ -20,12 +20,12 @@ void loop() {
 	float temperature = readTemperature();
 	float humidity = readHumidity();
 	Serial.print(BLUETOOTH_TEMPERATURE_START_CHAR);
-	Serial.println(temperature);
+	Serial.print(temperature);
 	Serial.print(BLUETOOTH_HUMIDITY_START_CHAR);
 	Serial.println(humidity);
 }
 
-float readTemperature(){
+float readTemperature() {
 	unsigned int data[2];
 	// Start I2C transmission  
 	Wire.beginTransmission(Addr);  
