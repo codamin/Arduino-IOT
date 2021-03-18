@@ -3,7 +3,7 @@
 #include <LiquidCrystal.h>
 #include <string.h>
 
-#define NUM_DATA_BYTES 4
+#define NUM_DATA_BYTES 2
 #define HUMIDITY_DELIM_START 'h'
 #define TEMEPERATURE_DELIM_START 't'
 #define MAX_PWM 255
@@ -40,7 +40,7 @@ void rcv_data()
       }
     }
     else {
-      if(Serial.available() >= 2) {
+      if(Serial.available() >= NUM_DATA_BYTES) {
         data = Serial.parseFloat();
         if (is_rcving_humidity) {
           humidity = data;
