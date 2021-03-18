@@ -8,21 +8,12 @@
 #define TEMEPERATURE_DELIM_START 't'
 #define MAX_PWM 255
 
-// Defining LCD pins
-// LCD RS pin to digital pin 12
-// LCD Enable pin to digital pin 11
-// LCD D4 pin to digital pin 5
-// LCD D5 pin to digital pin 4
-// LCD D6 pin to digital pin 3
-// LCD D7 pin to digital pin 2
-
-// LCD R/W pin to GND
-// LCD VSS pin to GND
-// LCD VCC pin to 5V
+//motor pins
 int in1 = 10;
 int in2 = 9;
 int en = 6;
 
+//lcd pins
 const int RS = 12, EN = 11, D4 = 5, D5 = 4, D6 = 3, D7 = 2;
 LiquidCrystal lcd(RS, EN, D4, D5, D6, D7);
 
@@ -33,7 +24,7 @@ bool is_rcving_humidity = false;
 bool is_rcving_temperature = false;
 bool has_started = false;
 String watering_type = "No Water";
-///////////////////////////////////////////////
+
 void rcv_data()
 {
   char byte;
