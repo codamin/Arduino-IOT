@@ -49,7 +49,7 @@ void updateTemperature() {
 		data[0] = Wire.read();    
 		data[1] = Wire.read();
 		temperature = (((data[0] * 256.0 + data[1]) * 175.72) / 65536.0) - 46.85;
-	}  
+	}
 }
 
 void updateHumidity(){
